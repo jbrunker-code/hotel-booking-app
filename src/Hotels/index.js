@@ -2,15 +2,11 @@ import React from "react";
 import Hotel from "./Hotel.js";
 import { hotels } from "../data.js";
 
-var renderHotel = hotel => <Hotel key={hotel.id} hotel={hotel} />;
+var renderHotel = (hotel) => <Hotel key={hotel.id} hotel={hotel} />;
 
-var HotelsList = props => {
-  /* see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter to learn how the .filter array method works
-
-  see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every to learn how the .every array method works
-  */
-  var filterCallback = hotel => {
-    var everyCallback = filter => hotel[filter];
+var HotelsList = (props) => {
+  var filterCallback = (hotel) => {
+    var everyCallback = (filter) => hotel[filter];
     return props.selectedFilters.every(everyCallback);
   };
   var filteredHotels = hotels.filter(filterCallback);
