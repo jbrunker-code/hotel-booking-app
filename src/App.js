@@ -6,7 +6,6 @@ class App extends Component {
   state = { selectedFilters: [] };
   toggleFilter = (clickedFilterKey) => {
     var newFilters;
-
     var alreadySelected = this.state.selectedFilters.includes(clickedFilterKey);
     if (alreadySelected) {
       newFilters = this.state.selectedFilters.filter(
